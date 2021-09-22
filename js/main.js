@@ -1,5 +1,4 @@
 'use strict';
 
-
-const data = require('./data/dataCl.json');
+const data = import('./data/data.js');
 console.log(data);
