@@ -1,4 +1,4 @@
-const data = {
+export const data = {
     "loyer" : 430,
     "starting": "09/01/20",
     "versements" : [

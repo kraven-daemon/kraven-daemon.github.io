@@ -1,4 +1,4 @@
 'use strict';
 
-const data = import('./data/data.js');
+import {data} from '/data/data.js';
 console.log(data);
