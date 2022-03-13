@@ -6,9 +6,44 @@
     <title>List</title>
     <link rel="shortcut icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="css/main.css">
+
+    <script type="module">
+     import three from 'https://cdn.skypack.dev/three';
+    </script>
     <script type="module" src="js/main.js"></script>
+<script>
+    import * as THREE from 'three';
+
+// init
+
+const camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.01, 10 );
+camera.position.z = 1;
+
+const scene = new THREE.Scene();
+
+const geometry = new THREE.BoxGeometry( 0.2, 0.2, 0.2 );
+const material = new THREE.MeshNormalMaterial();
+
+const mesh = new THREE.Mesh( geometry, material );
+scene.add( mesh );
+
+const renderer = new THREE.WebGLRenderer( { antialias: true } );
+renderer.setSize( window.innerWidth, window.innerHeight );
+renderer.setAnimationLoop( animation );
+document.body.appendChild( renderer.domElement );
+
+// animation
+
+function animation( time ) {
+
+    mesh.rotation.x = time / 2000;
+    mesh.rotation.y = time / 1000;
+
+    renderer.render( scene, camera );
+
+}
+  </script>
   </head>
   <body>
-    <img src="https://kidsactivitiesblog.com/wp-content/uploads/2016/08/Cat-steals-money-to-give-to-homeless-video-Kids-Activities-Blog-fb.jpg" />
   </body>
 </html>
